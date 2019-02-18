@@ -6,7 +6,7 @@ import "./styles.css";
 function App() {
   return (
     <div className="App">
-      <AdminInfo isAdmin={false} info="there are the details" />
+      <AdminInfo isAdmin={true} info="there are the details" />
     </div>
   );
 }
