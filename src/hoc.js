@@ -12,10 +12,24 @@ const Info = props => (
 const witheA = Same => {
   return props => (
     <div>
-      <h2>hhhhhhhhhhhhhhhhhhh</h2>
+      {props.isAdmin && (
+        <span>this is a privet information don't shared with the other </span>
+      )}
       <Same {...props} />
     </div>
   );
 };
+const witheB = Same => {
+  return props => (
+    <div>
+      {props.isAdmin ? (
+        <Same {...props} />
+      ) : (
+        <span>make sure u are login in </span>
+      )}
+    </div>
+  );
+};
 const AdminInfo = witheA(Info);
-export default AdminInfo;
+const AdminInfo2 = witheB(Info);
+export default AdminInfo2;
